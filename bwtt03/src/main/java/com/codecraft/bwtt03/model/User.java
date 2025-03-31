@@ -2,7 +2,6 @@ package com.codecraft.bwtt03.model;
 
 import jakarta.persistence.*;
 
-import java.util.Objects;
 import java.util.UUID;
 
 @Entity
@@ -15,21 +14,25 @@ public class User {
     private String name;
     @Column(nullable = false, unique = true)
     private String email;
+    @Column(nullable = false)
+    private String password; //hashed
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
     @Column
     private Integer age;
 
+
     public User() {
     }
 
-    public User(UUID id, String name, String email, Role role, Integer age) {
+    public User(UUID id, String name, String email, Role role, Integer age, String password) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.role = role;
         this.age = age;
+        this.password = password;
     }
 
     public UUID getId() {
@@ -70,5 +73,13 @@ public class User {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
