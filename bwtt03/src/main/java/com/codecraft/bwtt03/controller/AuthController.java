@@ -25,12 +25,12 @@ public class AuthController {
     @Autowired
     private UserService userService;
 
-    @PostMapping
+    @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@RequestBody SignUpRequest signUpRequest) {
         return ResponseEntity.ok(userService.registerUser(signUpRequest));
     }
 
-    @PostMapping
+    @PostMapping("/login")
     public ResponseEntity<?> authenticateUser(@RequestBody LoginRequest loginRequest) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword())

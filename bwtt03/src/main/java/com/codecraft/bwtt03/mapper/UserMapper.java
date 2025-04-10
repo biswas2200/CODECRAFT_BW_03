@@ -10,7 +10,6 @@ public class UserMapper {
         user.setName(dto.getName());
         user.setEmail(dto.getEmail());
         user.setAge(dto.getAge());
-        //user.setRole(Role.valueOf(dto.getRole()));
         return user;
     }
 

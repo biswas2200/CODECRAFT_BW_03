@@ -29,11 +29,11 @@ public class UserServiceImpl implements UserService {
         User user = new User();
         user.setId(UUID.randomUUID());
         user.setName(signUpRequest.getName());
+        user.setEmail(signUpRequest.getEmail());
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         user.setPassword(passwordEncoder.encode(signUpRequest.getPassword()));
-        user.setRole(Role.USER); //default role is USER
+        user.setRole(Role.USER);
         user.setAge(signUpRequest.getAge());
-
         User savedUser = userRepository.save(user);
         return UserMapper.toDto(savedUser);
     }
