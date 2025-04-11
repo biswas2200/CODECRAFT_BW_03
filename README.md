@@ -43,5 +43,5 @@ This project is a **Spring Boot-based User Management System** that implements a
 
 ### **1️⃣ Clone the Repository**
 ```bash
-git clone https://github.com/your-repo-url.git
+git clone https://github.com/biswas2200/CODECRAFT_BW_03.git
 cd your-project
